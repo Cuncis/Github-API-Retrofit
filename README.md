@@ -1,3 +1,3 @@
 # Github-API-Retrofit
 
-This a simple app github api with retrofit
+This is a simple app github api with retrofit
