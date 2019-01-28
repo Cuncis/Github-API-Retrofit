@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.UserActivity"
+    android:orientation="vertical"
+    android:layout_margin="14dp"
+    android:background="@color/colorGray">
+
+    <ImageView
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:id="@+id/img_avatar"
+        android:layout_gravity="center"
+        style="@style/TextAppearance"/>
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_marginTop="15dp"
+        android:text="@string/username"
+        style="@style/TextAppearance"/>
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:text="@string/login"
+        style="@style/TextAppearance"/>
+
+    <TextView
+        android:id="@+id/tv_followers"
+        android:text="@string/followers"
+        style="@style/TextAppearance"/>
+
+    <TextView
+        android:id="@+id/tv_following"
+        android:text="@string/following"
+        style="@style/TextAppearance"/>
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:text="@string/email"
+        style="@style/TextAppearance"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_repositories"
+        android:text="@string/repositories"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"/>
+
+</LinearLayout>
