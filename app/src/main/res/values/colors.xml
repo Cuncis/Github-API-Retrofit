@@ -6,4 +6,7 @@
 
     <color name="colorGray">#E0E0E0</color>
     <color name="colorBlack">#B2000000</color>
+    <color name="green">#009933</color>
+    <color name="dark_red">#992600</color>
+    <color name="dark_blue">#003366</color>
 </resources>

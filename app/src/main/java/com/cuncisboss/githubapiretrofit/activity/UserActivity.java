@@ -1,8 +1,10 @@
 package com.cuncisboss.githubapiretrofit.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,9 +31,20 @@ public class UserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
+        getSupportActionBar().setTitle("Github User");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initView();
 
-        String newString = getIntent().getStringExtra("STRING_I_NEED");
+        final String newString = getIntent().getStringExtra("STRING_I_NEED");
+
+        btnRepositories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(UserActivity.this, RepoActivity.class);
+                i.putExtra("STRING_USER", newString);
+                startActivity(i);
+            }
+        });
 
         Log.d(TAG, "onCreate: " + newString);
         loadData(newString);
@@ -66,7 +79,6 @@ public class UserActivity extends AppCompatActivity {
 
                 } else {
                     Toast.makeText(UserActivity.this, "" + response.message(), Toast.LENGTH_SHORT).show();
-//                    Log.d(TAG, "onResponse: " + response.message());
                 }
             }
 
@@ -86,5 +98,12 @@ public class UserActivity extends AppCompatActivity {
         tvLogin = findViewById(R.id.tv_login);
         tvEmail = findViewById(R.id.tv_email);
         btnRepositories = findViewById(R.id.btn_repositories);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        onBackPressed();
+        return true;
     }
 }
